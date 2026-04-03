@@ -1,32 +1,28 @@
 ---
+import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import EcoPackages from '../components/EcoPackages';
 import TreeTracker from '../components/TreeTracker';
 ---
 
 <Layout title="NusaTree - Wisata Konservasi Hutan">
-  <main class="max-w-6xl mx-auto mt-10 pb-20">
-    <header class="text-center mb-12">
-      <h1 class="text-4xl font-extrabold text-gray-900 mb-4">
-        Tanam Pohonmu, <span class="text-green-600">Jejak Kebaikanmu</span>
-      </h1>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        Jadilah bagian dari perubahan. Pilih paket wisata edukasi kami, tanam pohon langsung dengan tangan Anda, dan pantau pertumbuhannya secara real-time.
-      </p>
+  <main class="container">
+    <header class="header-section text-center">
+      <h1 class="title-main">Tanam Pohonmu, <span class="title-highlight">Jejak Kebaikanmu</span></h1>
+      <p class="subtitle">Pilih paket ekowisata edukasi kami, rasakan pengalaman menanam pohon dengan tangan Anda sendiri, dan pantau pertumbuhannya secara real-time.</p>
     </header>
 
-    <section class="mb-20">
-      <h2 class="text-2xl font-bold text-gray-800 ml-6 mb-4">Paket Ekowisata Tersedia</h2>
+    <section>
+      <h2 style="font-size: 2rem; margin-bottom: 20px;">Mulai Petualangan Alam Anda</h2>
       <EcoPackages client:load /> 
     </section>
 
-    {/* Section Tracker */}
-    <section id="tracker" class="bg-gray-50 py-12 px-4 rounded-3xl">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Transparansi yang Nyata</h2>
-        <p class="text-gray-600 mb-2">Sudah berpartisipasi menanam pohon bersama kami?</p>
-        <TreeTracker client:load />
+    <section id="tracker" class="tracker-box">
+      <div class="text-center">
+        <h2 style="font-size: 2rem; margin-bottom: 10px;">Transparansi yang Nyata</h2>
+        <p class="subtitle" style="margin-bottom: 30px;">Masukkan Token ID Anda untuk memantau rekam jejak pohon yang telah ditanam.</p>
       </div>
+      <TreeTracker client:load />
     </section>
   </main>
 </Layout>
